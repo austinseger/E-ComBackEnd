@@ -23,7 +23,6 @@ Category.init({
     modelName: 'category',
 });
 
-// Define the association
 Category.hasMany(Product, {
     foreignKey: 'category_id',
     onDelete: 'CASCADE',

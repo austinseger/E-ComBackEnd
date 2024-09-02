@@ -1,11 +1,10 @@
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
-// GET all categories
 router.get('/', async (req, res) => {
     try {
         const categories = await Category.findAll({
-            include: [{ model: Product }],  // Include Product model
+            include: [{ model: Product }],  
         });
         res.status(200).json(categories);
     } catch (err) {
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// GET a single category by ID
 router.get('/:id', async (req, res) => {
     try {
         const category = await Category.findByPk(req.params.id, {

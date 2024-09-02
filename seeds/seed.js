@@ -1,7 +1,6 @@
 const sequelize = require('../config/connection');
 const { Category, Product, Tag } = require('../models');
 
-// Add the rest of your seed script here, as described previously
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
 
